@@ -1,0 +1,157 @@
+.search-facet{
+	width: 100px;
+	margin-top: 10px;
+	height: 30px;
+	word-spacing: 20px;
+	margin-left: 60px;
+	margin-top: 5px;
+	display: table-row;
+}
+
+.option-selector{
+	width: 150px;
+	margin-top: 10px;
+	word-spacing: 20px;
+	margin-left: 60px;
+	margin-top: -0.5px;
+	display: table-row;
+
+}
+
+.search-input-field{
+
+	word-spacing: 10px;
+	margin-left: 60px;
+	margin-top: 5px;
+	display: table-row;
+}
+
+.InputClass{
+
+	width: 150px;
+	margin-top: 5px;
+	word-spacing: 5px;
+	margin-left: 60px;
+	margin-top: 5px;
+	display: table-row;
+	background-color: rgb(220, 239, 240);
+}
+
+.search{
+	margin-top: 85px;
+	word-spacing: 10px;
+	margin-left: 60px;
+	align-self: center;
+}
+.search-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+    margin-left: 80px;
+    width: 70vw;
+	border-bottom: 50px;
+	word-spacing: 30px;
+	background-color: rgb(88, 157, 202)
+}
+
+h1{
+	text-align: center;
+	margin-left: 150px;
+}
+
+.search-form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5vh;
+    border-bottom-color: greenyellow;
+
+    
+}
+.submit-button{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  vertical-align: 20%;
+  align-self: center;
+  margin-left: 90px;
+}
+
+body {
+	margin: 0;
+	background-color: cadetblue;
+}
+
+.matchsListclass{
+
+	word-spacing: 20%;
+	justify-items: center;
+	padding-bottom: 50%;
+	background: #3399ff;
+	padding: 40px;
+	margin-top: 5%;
+}
+
+.add-Movie-favourites{
+	align-items: center;
+	background-color:cadetblue;
+	margin-left: 30%;
+}
+
+.match-list-order-class{
+
+	margin-top: 40px;
+    border:2px solid grey;
+}
+
+.matchsListclass.li addButton{
+
+	text-align: center;
+	align-self: center;
+
+} 
+
+.favlistclass{
+
+	word-spacing: 10%;
+	justify-items: center;
+	padding-bottom: 30%;
+	background: #3399ff;
+	padding: 20px;
+	margin-top: 5%;
+}
+.matCards{
+    background : lightgrey;
+}
+h2{
+	text-align: center;
+	margin-top: 5%;
+	background-color: rgb(88, 157, 202);
+}
+p{
+	text-align: justify;
+	margin-top: 5%;	
+}
+img{
+	margin-left: 20%;
+	margin-right: 10%;
+
+}
+
+.fav-list-match-item{
+	margin-top: 40px;
+    border:2px solid grey;	
+}
+.error-message{
+	align-self:  center;
+}
+
+.addToFavourites{
+    background : lightslategray;
+    color: white;
+}

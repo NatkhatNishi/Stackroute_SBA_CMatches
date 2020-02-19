@@ -1,0 +1,25 @@
+spring:
+  data:
+    mongodb:
+      database: ${MONGO_DATABASE}
+      uri: ${MONGO_URL}
+#      database: cricApp
+#      port: 27017
+#      host: localhost
+  application:
+    name: favouriteservice
+server:
+  port: 9300
+eureka:
+  client:
+   register-with-eureka: true
+   fetch-registry: true
+   service-url:
+      default-zone: http://localhost:8761/eureka
+      
+Spring:
+    rabbitmq:
+    host: localhost  
+    port: 5672  
+    username: guest
+    password: guest        

@@ -1,0 +1,22 @@
+
+<mat-toolbar class="header">
+  <span><a routerLink="/">{{title}}</a></span>
+  <span class="spacer"></span>
+  <ul>
+   <li *ngIf="!userIsAuthenticated"><a mat-button routerLink="/login" routerLinkActive="active">Login</a></li>
+  <li *ngIf="!userIsAuthenticated"><a mat-button routerLink="/signup" routerLinkActive="active">SignUp</a></li>
+ <!--  <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/favouritematches" routerLinkActive="active">Favourite Matches</a></li>
+  <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/oldmatches" routerLinkActive="active">Old Matches</a></li>
+  <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/newmatches" routerLinkActive="active">Upcoming Matches</a></li>
+  <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/recommendations" routerLinkActive="active">Recommendation</a></li> 
+  <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+  <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/search" routerLinkActive="active">Search</a></li>
+   -->
+   <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+   <li *ngIf="userIsAuthenticated"><button mat-button (click)="onLogout()">Logout</button></li>
+  </ul>
+   
+</mat-toolbar>
+
+
+ <marquee class="app-marque"><h2>Welcome to Cricket Match Application</h2></marquee>

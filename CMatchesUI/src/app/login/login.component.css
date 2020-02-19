@@ -1,0 +1,62 @@
+.login-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     margin-top: 15vh;
+    margin-left: 440px; 
+    margin-right:340px; 
+    background-color: rgb(88, 157, 202);
+    margin-bottom: 100px;
+     width: 38vw;
+    height: 39vw;
+    text-orientation: sideways-right;
+    
+    word-spacing: 80px;
+    text-align: center;
+}
+
+
+ .login-form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 5vh;
+    word-spacing: 130%;
+    margin-top: 10px;
+    margin-bottom: 90px;
+} 
+
+.user-name-input{
+    background-color: white;
+    margin-top: 10px;
+}
+
+.singn-up{
+
+    align-self: center;
+    margin-left: 50px;
+}
+
+.input-user-field{
+    margin-top: 40px;
+    word-spacing: 10px;
+}
+
+.input-password-field{
+
+    margin-top: 40px;
+    word-spacing: 10px;
+
+}
+
+.user-password-input{
+    background-color: white; 
+}
+
+.submit-button{
+    margin-bottom: 50px;
+    margin-top: 60px;
+}

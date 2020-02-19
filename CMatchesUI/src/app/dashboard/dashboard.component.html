@@ -1,0 +1,82 @@
+<div class="search-container">
+  <h1>Match Library</h1>
+  <form class="search-form" [formGroup]="searchForm" (ngSubmit)="searchMatch(searchForm)">
+    <div class="search-facet">
+      <label class="search-facet-selector" name="Search" value="search">
+        <span aria-hidden="true" class="search-facet-value"></span>
+        <select aria-label="Search by" class="option-selector">
+          <option value='all'>All</option>
+          <option value='Team-1'>Team1</option>
+          <option value='Team-2'>Team2</option>
+        </select>
+      </label>
+    </div>
+    <mat-form-field class="search-input-field">
+      <input matInput placeholder="" type="text" formControlName='searchkeyword' class="InputClass">
+      <button mat-button id="seach-button" class="submit-button">Search </button>
+      <strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong>
+    </mat-form-field>
+  </form>
+</div>
+
+<div class="col-12 col-md-6" *ngIf="matchList?.length > 0">
+  <h2>Searched Matches</h2>
+  <!-- <ul id="matchesList" class="matchlistclass" *ngFor="let match of matchList" class="list-group"> -->
+
+    <mat-list *ngFor="let match of matchList; let i = index" style="margin-bottom:30px">
+      <br><br><br><br><br><br> 
+      <mat-list-item class="col-6 col-sm-6 col-md-6 col-lg-6">
+          <mat-expansion-panel class="note-input-panel">
+              <mat-expansion-panel-header>
+                <mat-panel-title>{{match.unique_ID}}</mat-panel-title>
+              </mat-expansion-panel-header>
+
+        <mat-card class="matCards " >
+          <mat-card-content>{{match.unique_ID}}</mat-card-content>
+          <mat-card-content>{{match.date}}</mat-card-content>
+          <mat-card-content>{{match.team1}}</mat-card-content>
+          <mat-card-content>{{match.team2}}</mat-card-content>
+          <mat-card-content>{{match.matchStarted}}</mat-card-content>
+
+        </mat-card>
+        </mat-expansion-panel>
+        <button mat-buton (click)="addToFavourite(match)" class="addToFavourites">Add to favourite</button>
+      </mat-list-item>
+    </mat-list>
+</div>
+
+
+<div class="col-12 col-md-6" *ngIf="favmatchList?.length > 0">
+  <h2>Favourite Matches</h2>
+
+    <mat-list *ngFor="let match of favmatchList; let i = index" style="margin-bottom:30px">
+      <br><br><br><br><br><br>
+      <mat-list-item class="col-6 col-sm-6 col-md-6 col-lg-6">
+        <mat-card class="matCards">
+          <mat-card-content>{{match.unique_ID}}</mat-card-content>
+          <mat-card-content>{{match.date}}</mat-card-content>
+          <mat-card-content>{{match.team1}}</mat-card-content>
+          <mat-card-content>{{match.team2}}</mat-card-content>
+          <mat-card-content>{{match.matchStarted}}</mat-card-content>
+
+        </mat-card>
+      </mat-list-item>
+    </mat-list>
+</div>
+
+<div class="col-12 col-md-6" *ngIf="recommendedList?.length > 0">
+  <h2>Recommended Matches</h2>
+    <mat-list *ngFor="let match of recommendedList; let i = index" style="margin-bottom:30px">
+        <br><br><br><br><br><br>
+        <mat-list-item class="col-6 col-sm-6 col-md-6 col-lg-6">
+          <mat-card class="matCards">
+            <mat-card-content>{{match.unique_ID}}</mat-card-content>
+            <mat-card-content>{{match.date}}</mat-card-content>
+            <mat-card-content>{{match.team1}}</mat-card-content>
+            <mat-card-content>{{match.team2}}</mat-card-content>
+            <mat-card-content>{{match.matchStarted}}</mat-card-content>
+  
+          </mat-card>
+        </mat-list-item>
+      </mat-list>
+</div>

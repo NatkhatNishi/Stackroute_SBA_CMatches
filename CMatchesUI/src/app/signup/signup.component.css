@@ -1,0 +1,59 @@
+/* .container{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+    margin-left: 440px; 
+    margin-right:340px; 
+    background-color: blue;
+    margin-bottom: 100px;
+     width: 38vw;
+    height: 39vw;
+    text-orientation: sideways-right;
+    word-spacing: 10px;
+
+} */
+/* .mt-5{
+    align-self: center;
+    margin-top: 15vh;
+    margin-left: 440px; 
+    margin-right:340px; 
+} */
+
+.sign-up-label{
+    margin-top: 0%;
+    margin-bottom: 20px;
+}
+.form-group{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+    margin-left: 440px; 
+    margin-right:340px; 
+    background-color: rgb(88, 157, 202);
+    margin-bottom: 100px;
+     width: 38vw;
+    height: 39vw;
+    text-orientation: initial;
+    word-spacing: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+.mt-5{
+    word-spacing: 10px;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.btn btn-primary{
+    margin-bottom: 0px;
+    margin-top: 50px;
+}

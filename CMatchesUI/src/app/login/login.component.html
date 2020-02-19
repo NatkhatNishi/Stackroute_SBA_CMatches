@@ -1,0 +1,23 @@
+<div class="login-container">
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm)">
+    <h1>Login</h1>
+    <mat-form-field class="input-user-field">
+      <label>UserID</label>
+      <input matInput placeholder="" type="text" [(value)]="text" formControlName='username' class="user-name-input">
+    </mat-form-field>
+
+    <mat-form-field class="input-password-field">
+      <label>Password</label>
+      <input matInput placeholder="" type="password" formControlName='password' class="user-password-input">
+    </mat-form-field>
+    <button mat-button class="submit-button">Login</button>
+    <strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong>
+
+    <div id="signup" class="sign-up-class">
+      <mat-nav-list class="singn-up">
+        <a mat-list-item routerLink="signup">Register</a>
+      </mat-nav-list>
+    </div>
+
+  </form>
+</div>

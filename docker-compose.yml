@@ -1,0 +1,122 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.5
+    ports:
+      - "3306:3306"
+    container_name: mysql_container
+    network_mode: host
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cricapp
+      MYSQL_USER: cricAppUser
+      MYSQL_PASSWORD: root
+    healthcheck:
+      test: "exit 0"
+  
+  mongo:
+    image: mongo:3.2-jessie
+    ports:
+      - "27017:27017"
+    container_name: mongo_container
+    network_mode: host
+    healthcheck:
+      test: "exit 0"
+  
+  eurekaServer:
+    image: eurekaservice:v1
+    build: netflix-eureka-naming-server/
+    restart: always
+    network_mode: host
+    container_name: eureka_container
+    ports:
+      - 8761:8761
+    healthcheck:
+      test: "exit 0"
+  
+  zuulService:
+    image: zuulservice:v1
+    build: netflix-zuul-api-gateway-server/
+    restart: always
+    network_mode: host
+    container_name: zuul_container
+    ports:
+      - 8765:8765
+    healthcheck:
+      test: "exit 0"
+  
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq_container
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: "exit 0"
+  
+  userservice:
+    image: userService:v1
+    build: userservice/
+    restart: always
+    network_mode: host
+    container_name: userservice_container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cricapp
+      MYSQL_USER: cricAppUser
+      MYSQL_PASSWORD: root
+    depends_on:
+      - mysql
+      - eurekaServer
+      - rabbitmq
+    ports:
+      - 9100:9100
+    healthcheck:
+      test: "exit 0"
+  
+  favouriteservice:
+    image: favouriteservice:v1
+    build: favouriteservice/
+    restart: always
+    network_mode: host
+    container_name: favouriteservice_container
+    environment:
+      MONGO_DATABASE: "cricApp"
+      MONGO_URL: "mongodb://mongo:27017"
+    depends_on:
+      - mongo
+      - eurekaServer
+      - rabbitmq
+    ports:
+      - 9300:9300
+    healthcheck:
+      test: "exit 0"
+  
+  recommendationservice:
+    image: recommendationservice:v1
+    build: matchrecommendationservice/
+    restart: always
+    network_mode: host
+    container_name: recommender_container
+    environment:
+      MONGO_DATABASE: "cricApp"
+      MONGO_URL: "mongodb://mongo:27017"
+    depends_on:
+      - mongo
+      - eurekaServer
+      - rabbitmq
+      - favouriteservice
+    ports:
+      - 9200:9200
+    healthcheck:
+      test: "exit 0"
+  
+  CMatchesUI:
+    image: nomanwar/cmatchesui:v1
+    build: cmatchesui/
+    network_mode: host
+    container_name: ui_container
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: "exit 0"

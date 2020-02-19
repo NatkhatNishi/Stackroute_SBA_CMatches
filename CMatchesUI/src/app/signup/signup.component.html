@@ -1,0 +1,46 @@
+<div class="container">
+  <!-- <h1 class="mt-5">Sign Up</h1> -->
+
+   <form class="mt-5" #signUpForm="ngForm" (ngSubmit)="signUpUser(signUpForm)">
+   
+    <!-- <form class="mt-5" [formGroup]="signUpForm" (ngSubmit)="signUpUser(signUpForm)"> -->
+    <div class="form-group">
+      <label class="sign-up-label">Registeration Form</label>
+      <label for="userid">User ID*</label> 
+
+      <input type="userid" name="userid" placeholder="Enter UserId" [(ngModel)]="userobj.userid" #emailRef="ngModel"
+        required email minlength="6">
+
+      <small *ngIf="emailRef.touched && emailRef.errors?.required" class="validation-error">
+        UserId must not be empty
+      </small>
+
+      <!-- <small *ngIf="emailRef.touched && emailRef.errors?.minlength" class="validation-error">
+        Userid must be of 4 characters !!!
+      </small> -->
+   
+      <label for="passInput">Password*</label>
+      <input type="password" name="upass" placeholder="Enter Password" [(ngModel)]="userobj.userPassword" #passwordRef="ngModel">
+
+      <small *ngIf="passwordRef.touched && passwordRef.errors?.required" class="validation-error">
+          Password must not be empty
+        </small>
+
+      <label for="firstName">FirstName</label>
+      <input type="text" name="ufirstname" placeholder="Enter firstName" [(ngModel)]="userobj.firstName" #firstnameRef="ngModel">
+
+      <small *ngIf="firstnameRef.touched && firstnameRef.errors?.required" class="validation-error">
+          FirstName must not be empty
+        </small>
+
+      <label for="lastName">LastName</label>
+      <input type="text" name="ulastname" placeholder="Enter LastName" [(ngModel)]="userobj.lastName" #lastnameRef="ngModel">
+
+      <small *ngIf="lastnameRef.touched && lastnameRef.errors?.required" class="validation-error">
+          LastName must not be empty
+        </small>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
